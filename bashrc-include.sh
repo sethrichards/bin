@@ -49,3 +49,7 @@ alias igrep="do_igrep"
 alias ygrep='grep -iHnr --color'
 
 alias grep="grep --color -Hn -i"
+
+# Git aliases
+alias g-substatus="git status -s; git submodule foreach 'git status -s'"
+alias g-subclean="git clean -fdx; git submodule foreach 'git clean -fdx'"
