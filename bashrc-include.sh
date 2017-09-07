@@ -25,9 +25,11 @@ do_cgrep() {
     xgrep "$search_string" "*.h"
     xgrep "$search_string" "*.hpp"
     xgrep "$search_string" "*.hxx"
+    xgrep "$search_string" "*.hh"
     xgrep "$search_string" "*.c"
     xgrep "$search_string" "*.cpp"
     xgrep "$search_string" "*.cxx"
+    xgrep "$search_string" "*.cc"
     xgrep "$search_string" "*.cs"
 }
 alias cgrep="do_cgrep"
@@ -37,6 +39,7 @@ do_hgrep() {
     xgrep "$search_string" "*.h"
     xgrep "$search_string" "*.hpp"
     xgrep "$search_string" "*.hxx"
+    xgrep "$search_string" "*.hh"
 }
 alias hgrep="do_hgrep"
 
