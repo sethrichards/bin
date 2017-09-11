@@ -43,6 +43,12 @@ do_hgrep() {
 }
 alias hgrep="do_hgrep"
 
+do_mgrep() {
+    local search_string = $1
+    xgrep "$search_string" "Make*"
+}
+alias mgrep="do_mgrep"
+
 do_igrep() {
     local search_string=$1
     grep -iHnr --color "$search_string" "*"
