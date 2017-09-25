@@ -20,7 +20,8 @@
 
 #!/bin/bash
 
-CC=arm-none-linux-gnueabi-gcc
+#CC=arm-none-linux-gnueabi-gcc
+CC=gcc
 SRCARCH=arm
 BASE=`basename $1 .dts`
 DTC_CPP_FLAGS="-E -Wp,-MD,$BASE.pre.tmp -nostdinc -Iarch/$SRCARCH/boot/dts -Iarch/$SRCARCH/boot/dts/include -undef -D__DTS__  -x assembler-with-cpp"
@@ -83,7 +84,8 @@ if [[ $? -ne 0 ]]
      exit
 fi
 
-scripts/dtc/dtc -O dts -o $BASE.out.dts -b 0 -i arch/arm/boot/dts -d $BASE.dtc.tmp $BASE.tmp
+#scripts/dtc/dtc -O dts -o $BASE.out.dts -b 0 -i arch/arm/boot/dts -d $BASE.dtc.tmp $BASE.tmp
+dtc -O dts -o $BASE.out.dts -b 0 -i arch/arm/boot/dts -d $BASE.dtc.tmp $BASE.tmp
 
 if [[ $? -eq 0 ]]
   then
