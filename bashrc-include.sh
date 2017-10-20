@@ -55,11 +55,12 @@ do_igrep() {
 }
 alias igrep="do_igrep"
 
-alias ygrep='grep -iHnr --color'
-
 alias grep="grep --color -Hn -i"
+
+alias xfind="find . -iname"
 
 # Git aliases
 alias g-substatus="git status -s; git submodule foreach 'git status -s'"
 alias g-substatus-u="git status -s -uno; git submodule foreach 'git status -s -uno'"
+alias g-substatus-i="git status -s --ignored; git submodule foreach 'git status -s --ignored'"
 alias g-subclean="git clean -fdx; git submodule foreach 'git clean -fdx'"
