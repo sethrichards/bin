@@ -12,3 +12,14 @@
 (add-to-list 'auto-mode-alist
              '("[Mm]ake*" . makefile-mode) ;; Makefiles
              )
+
+;; GUI tweaks
+(setq tool-bar-mode nil)
+
+(setq custom-enabled-themes (quote (tango-dark)))
+
+(setq ansi-color-faces-vector
+ [default default default italic underline success warning error])
+
+(setq column-number-mode t)
+(setq size-indication-mode t)
