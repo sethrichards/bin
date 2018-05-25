@@ -23,3 +23,22 @@
 
 (setq column-number-mode t)
 (setq size-indication-mode t)
+
+(unless window-system
+  ;; Terminal Mouse support
+  (require 'mouse)
+  (xterm-mouse-mode t)
+  ;(require 'xclip-mode)
+  ;(xclip-mode)
+  ;(defun track-mouse(e))
+                                        ;(setq mouse-sel-mode t)
+
+  ;; Line Num Mode
+  (setq linum-format "%3d\u2502")
+  
+  ;(eval-after-load 'linum
+    (set-face-attribute 'fringe nil :background "#000000" :foreground "#e5e5e5")
+    ;(set-face-background 'fringe  nil "#0000ee")
+   ; )
+)
+  
