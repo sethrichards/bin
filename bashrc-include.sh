@@ -19,6 +19,9 @@ source ~/bin/bashrc-git.sh
 # See here: https://xaizek.github.io/2015-10-25/enable-colorization-of-gcc-output/
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# Local build colorization
+export COLOR=1
+
 #export PS1="\u@\h:\w\ \`parse_git_branch\`-> "
 #export PS1="\[\e[30;42m\]\u\[\e[m\]\[\e[30;42m\]@\[\e[m\]\[\e[30;42m\]\h\[\e[m\]\[\e[30;42m\]:\[\e[m\]\[\e[30;44m\]\w\[\e[m\]\[\e[44m\] \[\e[m\]\[\e[30;46m\]\`parse_git_branch\`\[\e[m\]\n-> "
 
