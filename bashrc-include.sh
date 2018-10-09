@@ -13,6 +13,7 @@
 
 source ~/bin/bashrc-grep.sh
 source ~/bin/bashrc-git.sh
+source ~/bin/bashrc-windows.sh
 
 # GCC colorization
 # Add -fdiagnostics-color=[auto|never|always] to GCC_FLAGS.
