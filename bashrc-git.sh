@@ -7,8 +7,12 @@ alias g-substatus="git status -s; git submodule foreach 'git status -s'"
 alias g-substatus-u="git status -s -uno; git submodule foreach 'git status -s -uno'"
 alias g-substatus-i="git status -s --ignored; git submodule foreach 'git status -s --ignored'"
 alias g-subclean="git clean -fdx; git submodule foreach 'git clean -fdx'"
-alias g-log="git log --oneline --graph --decorate=short"
+#alias g-log="git log --oneline --graph --decorate=short"
 
+function g-log() {
+    #git log --graph --pretty=format:"%C(yellow)%<(10)%h%C(green)%<(16)%aN%C(cyan)%<(14)%ar%C(auto)%d%n%w(80,3,3)%C(auto)%<(2)%s" "$@"
+    git log --graph --pretty=format:"%C(yellow)%<(9)%h %C(green)%<(15)%aN %C(cyan)%<(14)%ar %n%w(80,2,2)%C(auto)%C(auto)%<(2)%s %w(80,1,1)%+d" "$@"
+}
 
 # Add a nice prompt with Git status
 # get current branch in git repo
