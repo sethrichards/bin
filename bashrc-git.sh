@@ -3,7 +3,7 @@
 #echo "bashrc-git.sh"
 
 # Git aliases
-alias g-substatus="git status -s; git submodule foreach 'git status -s'"
+#alias g-substatus="git status -s; git submodule foreach 'git status -s'"
 alias g-substatus-u="git status -s -uno; git submodule foreach 'git status -s -uno'"
 alias g-substatus-i="git status -s --ignored; git submodule foreach 'git status -s --ignored'"
 alias g-subclean="git clean -fdx; git submodule foreach 'git clean -fdx'"
@@ -12,6 +12,32 @@ alias g-subclean="git clean -fdx; git submodule foreach 'git clean -fdx'"
 function g-log() {
     #git log --graph --pretty=format:"%C(yellow)%<(10)%h%C(green)%<(16)%aN%C(cyan)%<(14)%ar%C(auto)%d%n%w(80,3,3)%C(auto)%<(2)%s" "$@"
     git log --graph --pretty=format:"%C(yellow)%<(9)%h %C(green)%<(15)%aN %C(cyan)%<(14)%ar %n%w(80,2,2)%C(auto)%C(auto)%<(2)%s %w(80,1,1)%+d" "$@"
+}
+
+TEXT_BOLD='\e[1m'
+TEXT_RED='\e[31m'
+TEXT_CYAN='\e[36m'
+TEXT_RESET='\033[0m'
+
+function g-substatus-m() {
+    #echo "$name"
+    if [[ -n $(git status -s) ]]; then
+        #echo $sm_path:
+        echo -e "${TEXT_CYAN}${TEXT_BOLD}${displaypath} :${TEXT_RESET}"
+        git status -s
+    fi
+}
+export -f g-substatus-m
+
+function g-substatus() {
+
+    #if [[ -n $(git status -s) ]]; then
+    #    echo -e "${TEXT_CYAN}Top Level :${TEXT_RESET}"
+    #    git status -s
+    #fi
+    displaypath="Top Level"
+    g-substatus-m
+    git submodule foreach --quiet "g-substatus-m"
 }
 
 # Add a nice prompt with Git status
@@ -61,4 +87,3 @@ function parse_git_dirty {
         echo ""
     fi
 }
-
