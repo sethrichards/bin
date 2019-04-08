@@ -13,6 +13,9 @@
              '("[Mm]ake*" . makefile-mode) ;; Makefiles
              )
 
+;; Auto revert mode always
+(setq global-auto-revert-mode t)
+
 ;; GUI tweaks
 (setq tool-bar-mode nil)
 
