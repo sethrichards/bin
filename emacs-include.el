@@ -12,6 +12,9 @@
 (add-to-list 'auto-mode-alist
              '("[Mm]ake*" . makefile-mode) ;; Makefiles
              )
+(add-to-list 'auto-mode-alist
+             '("\\.h\\'"  . c++-mode) ;; Treat .h files as C++
+             )
 
 ;; Auto revert mode always
 (setq global-auto-revert-mode t)
