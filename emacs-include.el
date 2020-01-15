@@ -17,7 +17,7 @@
              )
 
 ;; Auto revert mode always
-(setq global-auto-revert-mode t)
+(global-auto-revert-mode)
 
 ;; GUI tweaks
 (setq tool-bar-mode nil)
