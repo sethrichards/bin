@@ -11,9 +11,9 @@
 
 #echo "bashrc-include.sh"
 
-source ~/bin/bashrc-grep.sh
-source ~/bin/bashrc-git.sh
-source ~/bin/bashrc-windows.sh
+source ~/bin-local/bin/bashrc-grep.sh
+source ~/bin-local/bin/bashrc-git.sh
+source ~/bin-local/bin/bashrc-windows.sh
 
 # GCC colorization
 # Add -fdiagnostics-color=[auto|never|always] to GCC_FLAGS.
